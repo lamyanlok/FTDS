@@ -17,3 +17,6 @@ for i in y:
     
 result = sum + minus
 print(result)
+
+calc = lambda s: eval(s.replace('plus', r'+').replace('minus', r'-'))
+print(calc('1plus2plus3minus4'))
