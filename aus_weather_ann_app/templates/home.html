@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Flask Web App</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+<h1>Australia Weather Classification</h1>
+<p> Please fill in the values below to predict tomorrow weather</p>
+
+<form action="/result" method="POST">
+
+    <label>MinTemp</label>
+<input type="text" name="MinTemp" value="0">
+<br>
+<label>MaxTemp</label>
+<input type="text" name="MaxTemp" value="0">
+<br>
+<label>Rainfall</label>
+<input type="text" name="Rainfall" value="0">
+<br>
+<label>WindGustSpeed</label>
+<input type="text" name="WindGustSpeed" value="0">
+<br>
+<label>WindSpeed9am</label>
+<input type="text" name="WindSpeed9am" value="0">
+<br>
+<label>WindSpeed3pm</label>
+<input type="text" name="WindSpeed3pm" value="0">
+<br>
+<label>Humidity9am</label>
+<input type="text" name="Humidity9am" value="0">
+<br>
+<label>Humidity3pm</label>
+<input type="text" name="Humidity3pm" value="0">
+<br>
+<label>Pressure9am</label>
+<input type="text" name="Pressure9am" value="0">
+<br>
+<label>Pressure3pm</label>
+<input type="text" name="Pressure3pm" value="0">
+<br>
+<label>Temp9am</label>
+<input type="text" name="Temp9am" value="0">
+<br>
+<label>Temp3pm</label>
+<input type="text" name="Temp3pm" value="0">
+<br>
+<label>month</label>
+<input type="text" name="month" value="0">
+<br>
+<label>day</label>
+<input type="text" name="day" value="0">
+<br>
+<label>WindGustDir_ENE</label>
+<input type="text" name="WindGustDir_ENE" value="0">
+<br>
+<label>WindGustDir_ESE</label>
+<input type="text" name="WindGustDir_ESE" value="0">
+<br>
+<label>WindGustDir_N</label>
+<input type="text" name="WindGustDir_N" value="0">
+<br>
+<label>WindGustDir_NE</label>
+<input type="text" name="WindGustDir_NE" value="0">
+<br>
+<label>WindGustDir_NNE</label>
+<input type="text" name="WindGustDir_NNE" value="0">
+<br>
+<label>WindGustDir_NNW</label>
+<input type="text" name="WindGustDir_NNW" value="0">
+<br>
+<label>WindGustDir_NW</label>
+<input type="text" name="WindGustDir_NW" value="0">
+<br>
+<label>WindGustDir_S</label>
+<input type="text" name="WindGustDir_S" value="0">
+<br>
+<label>WindGustDir_SE</label>
+<input type="text" name="WindGustDir_SE" value="0">
+<br>
+<label>WindGustDir_SSE</label>
+<input type="text" name="WindGustDir_SSE" value="0">
+<br>
+<label>WindGustDir_SSW</label>
+<input type="text" name="WindGustDir_SSW" value="0">
+<br>
+<label>WindGustDir_SW</label>
+<input type="text" name="WindGustDir_SW" value="0">
+<br>
+<label>WindGustDir_W</label>
+<input type="text" name="WindGustDir_W" value="0">
+<br>
+<label>WindGustDir_WNW</label>
+<input type="text" name="WindGustDir_WNW" value="0">
+<br>
+<label>WindGustDir_WSW</label>
+<input type="text" name="WindGustDir_WSW" value="0">
+<br>
+<label>WindDir9am_ENE</label>
+<input type="text" name="WindDir9am_ENE" value="0">
+<br>
+<label>WindDir9am_ESE</label>
+<input type="text" name="WindDir9am_ESE" value="0">
+<br>
+<label>WindDir9am_N</label>
+<input type="text" name="WindDir9am_N" value="0">
+<br>
+<label>WindDir9am_NE</label>
+<input type="text" name="WindDir9am_NE" value="0">
+<br>
+<label>WindDir9am_NNE</label>
+<input type="text" name="WindDir9am_NNE" value="0">
+<br>
+<label>WindDir9am_NNW</label>
+<input type="text" name="WindDir9am_NNW" value="0">
+<br>
+<label>WindDir9am_NW</label>
+<input type="text" name="WindDir9am_NW" value="0">
+<br>
+<label>WindDir9am_S</label>
+<input type="text" name="WindDir9am_S" value="0">
+<br>
+<label>WindDir9am_SE</label>
+<input type="text" name="WindDir9am_SE" value="0">
+<br>
+<label>WindDir9am_SSE</label>
+<input type="text" name="WindDir9am_SSE" value="0">
+<br>
+<label>WindDir9am_SSW</label>
+<input type="text" name="WindDir9am_SSW" value="0">
+<br>
+<label>WindDir9am_SW</label>
+<input type="text" name="WindDir9am_SW" value="0">
+<br>
+<label>WindDir9am_W</label>
+<input type="text" name="WindDir9am_W" value="0">
+<br>
+<label>WindDir9am_WNW</label>
+<input type="text" name="WindDir9am_WNW" value="0">
+<br>
+<label>WindDir9am_WSW</label>
+<input type="text" name="WindDir9am_WSW" value="0">
+<br>
+<label>WindDir3pm_ENE</label>
+<input type="text" name="WindDir3pm_ENE" value="0">
+<br>
+<label>WindDir3pm_ESE</label>
+<input type="text" name="WindDir3pm_ESE" value="0">
+<br>
+<label>WindDir3pm_N</label>
+<input type="text" name="WindDir3pm_N" value="0">
+<br>
+<label>WindDir3pm_NE</label>
+<input type="text" name="WindDir3pm_NE" value="0">
+<br>
+<label>WindDir3pm_NNE</label>
+<input type="text" name="WindDir3pm_NNE" value="0">
+<br>
+<label>WindDir3pm_NNW</label>
+<input type="text" name="WindDir3pm_NNW" value="0">
+<br>
+<label>WindDir3pm_NW</label>
+<input type="text" name="WindDir3pm_NW" value="0">
+<br>
+<label>WindDir3pm_S</label>
+<input type="text" name="WindDir3pm_S" value="0">
+<br>
+<label>WindDir3pm_SE</label>
+<input type="text" name="WindDir3pm_SE" value="0">
+<br>
+<label>WindDir3pm_SSE</label>
+<input type="text" name="WindDir3pm_SSE" value="0">
+<br>
+<label>WindDir3pm_SSW</label>
+<input type="text" name="WindDir3pm_SSW" value="0">
+<br>
+<label>WindDir3pm_SW</label>
+<input type="text" name="WindDir3pm_SW" value="0">
+<br>
+<label>WindDir3pm_W</label>
+<input type="text" name="WindDir3pm_W" value="0">
+<br>
+<label>WindDir3pm_WNW</label>
+<input type="text" name="WindDir3pm_WNW" value="0">
+<br>
+<label>WindDir3pm_WSW</label>
+<input type="text" name="WindDir3pm_WSW" value="0">
+<br>
+<label>RainToday_Yes</label>
+<input type="text" name="RainToday_Yes" value="0">
+<br>
+<input type="submit" value="Submit">
+
+
+</form>
+
+</body>
+</html>
