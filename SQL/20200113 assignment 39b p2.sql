@@ -1067,12 +1067,21 @@ insert into employees values (998, 'Brandice', 'Gillicuddy', 'bgillicuddyrp@adob
 insert into employees values (999, 'Kingston', 'Piwall', 'kpiwallrq@nyu.edu', '2012-07-07', 'Music', 'M', 45679, 7);
 insert into employees values (1000, 'Jacquelin', 'Cassam', 'jcassamrr@cam.ac.uk', '2010-01-27', 'Music', 'F', 28726, 2);
 
+-- 1.Return the first_name and email of females that work in the tools department having a salary greater than 110,000.
 select first_name, email from employees where gender = 'F' and salary > 110000;
+-- 2.Return the first_name and hire date of those employees who earn more than 165,000 as well as those employees that work in the sports department and also happen to be men.
 select first_name, hire_date from employees where gender = 'M' and department = 'Sports' and salary >= 165000;
+-- 3.Return the first_names and the hire dates of those employees who were hired during Jan 1st 2002 and Jan 1st 2004.
 select first_name , hire_date from employees where hire_date > '2002-01-01' and hire_date < '2004-01-01';
+-- 4.Return the male employees who work in the automotive field and earn more than 40,000 and less than 100,000 as well as females that work in the toys department.
 select * from employees where (department = 'Automotive' AND gender = 'M'and salary > 40000 and salary < 100000) or (department = 'Toys' AND gender = 'F'); 
+-- 5.Return the first_names of those employees who have the letters “an” or “ine” in their first_names.
 select first_name from employees where first_name like '%an%' or first_name like '%ine%';
+-- 6.Return the top 25 first_name and last_name as a full name of the employees sorted in the descending order of their salaries.
 SELECT concat(first_name,' ',last_name) as "full name" FROM employees order by salary desc limit 25;
+-- 7.Calculate the total salary paid annually in the Toys and Clothing departments.
 select sum(salary) from employees where department ='Toys' or department = 'Clothing';
+-- 8.Calculate the total salaries paid annually for all departments for the first 3 region_id.
 select sum(salary), region_id from employees where region_id <4 group by region_id  limit 3;
+-- 9.Calculate the total number of employees per department.
 select count(employee_id), department from employees group by department;

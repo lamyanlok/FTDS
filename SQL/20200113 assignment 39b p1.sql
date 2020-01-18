@@ -13,8 +13,12 @@ INSERT INTO employee(employee_id,first_name, last_name, salary, contract_length)
 INSERT INTO employee(employee_id,first_name, last_name, salary, contract_length) VALUES(4,'Nancy', 'Greenberg', 3000, 1);
 
 select * from employee;
+--  1.Write a query that returns the First and Last Name of every employee earning between 5-11k.
 select first_name, last_name from employee where salary > 5000 and salary < 11000;
+-- 2. Which employees are employed for less than 2 years?
 select * from employee where contract_length < 2;
+-- 3.Add two more employees to the table. Make up the data
 INSERT INTO employee(employee_id,first_name, last_name, salary, contract_length) VALUES(5,'Brian', 'Brian', 12000, 2);
 INSERT INTO employee(employee_id,first_name, last_name, salary, contract_length) VALUES(6,'Darren', 'Darren', 30000, 3);
+-- 4.Nancy Greenberg got a new contract, 2 years with 8000 salary. Update the table.
 update employee set salary  = 8000, contract_length = 2 where first_name ='Nancy';
